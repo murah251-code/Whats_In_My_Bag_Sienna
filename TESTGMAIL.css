@@ -1,0 +1,83 @@
+* { box-sizing: border-box; }
+@font-face {
+  font-family: "Redaction 35";
+  src: url("Redaction35R.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redaction 35";
+  src: url("Redaction35B.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redaction 35";
+  src: url("Redaction35I.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+.panel {
+  display: none;
+}
+.panel:target {
+  display: block;
+}
+.right:not(:has(.panel:target)) #keys {
+  display: block;
+}
+
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+
+
+html, body {
+  font-family: "redaction 35";
+  height: 100%;
+  color: rgb(71, 56, 44);
+background-color: rgb(201, 173, 167);
+}
+
+
+
+.left {
+  width: 500px;
+  margin-top: 50px;
+  flex-shrink: 0;      /* <-- this is the missing piece */
+  overflow-y: auto;
+  padding-left: 90px;
+  font-size: 30px;
+}
+ol{line-height: 1.6;
+margin-left: -5px}
+
+
+
+.right {
+  flex: 1;              /* <-- add this */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  margin-top: 80px;
+  font-size: 30px;
+}
+img {
+  width: 500px;
+  height: 500px;
+  margin: 25px;
+}
+
+p { max-width: 900px;
+  line-height: 1.2;
+  margin: 0 auto;
+margin-top: 30px}
